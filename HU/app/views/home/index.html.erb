@@ -3,36 +3,27 @@
   <h1>The universe is the totality of everything that exists, has existed, or ever will exist.</h1>
   <small>Let that bake your noodle! </small>
 </div>
-<div class="media">
-  <div class="media-left">
-    <a href="#">
-      <img class="media-object" src="http://cdn.flaticon.com/png/256/62519.png" alt="Smiley face" height="64" width="64">
-    </a>
+<div class="container">
+  <% @questions.each do |q| %>
+
+
+  <div class="media">
+    <div class="media-left">
+      <a href="#">
+        <img class="media-object" src="<%= q.gravatar %>" alt="Smiley face" height="64" width="64">
+      </a>
+    </div>
+
+    <div class="media-body">
+      <h4 class="media-heading"> <%= q.email %> asked:</h4>
+      <div><%= time_ago_in_words q.created_at %> ago</div>
+      <%= q.body %>
+      <div>
+        <a href="/questions/12" class="btn btn-success btn-xs">View Answers</a>
+      </div>
+    </div>
+  <% end %>
   </div>
-  <div class="media-body">
-    <h4 class="media-heading">user@email.com asked:</h4>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed urna mi, sollicitudin eget risus non, scelerisque posuere nisl. Ut a lectus laoreet, pulvinar leo id, pulvinar nibh. Nulla facilisi. Aliquam sollicitudin laoreet massa vitae pretium. Quisque at auctor ligula, non auctor nisi. Fusce tellus risus, molestie eu mauris quis, cursus semper lectus. Integer ligula velit, consequat nec est quis, laoreet aliquet lectus. Cras commodo viverra sapien, eu suscipit risus semper vel. Suspendisse suscipit orci eget mattis laoreet. Nulla sagittis, ex nec cursus lacinia, dui ligula pretium nibh, et iaculis neque dolor quis augue. Morbi tempor, lacus sed egestas suscipit, lectus ante feugiat ligula, ut tincidunt urna velit vitae enim. Aenean suscipit consequat felis eleifend egestas. Quisque non facilisis libero. Aliquam erat volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus semper porttitor porta.
-  </div>
-</div>
-<div class="media">
-  <div class="media-left">
-    <a href="#">
-      <img class="media-object" src="http://cdn.flaticon.com/png/256/62688.png" alt="Smiley face" height="64" width="64">
-    </a>
-  </div>
-  <div class="media-body">
-    <h4 class="media-heading">user@email.com asked:</h4>
-    Sed sed iaculis ex. Aliquam erat volutpat. Suspendisse dictum in eros quis tristique. Suspendisse congue metus eu nisl ullamcorper pulvinar. Vivamus tempor nec ex quis gravida. Aliquam ut vehicula mi. Suspendisse vulputate mauris ac tincidunt condimentum. Pellentesque lorem augue, sodales eget mattis faucibus, scelerisque ac ex. Etiam molestie lobortis augue et laoreet. Nulla vel odio suscipit, sodales massa vel, aliquet sem. Aliquam tincidunt tempor magna ut condimentum. Aenean vel auctor neque.
-  </div>
-</div>
-<div class="media">
-  <div class="media-left">
-    <a href="#">
-      <img class="media-object" src="http://cdn.flaticon.com/png/256/62635.png" alt="Smiley face" height="64" width="64">
-    </a>
-  </div>
-  <div class="media-body">
-    <h4 class="media-heading">user@email.com asked:</h4>
-     Cras commodo viverra sapien, eu suscipit risus semper vel. Suspendisse suscipit orci eget mattis laoreet. Nulla sagittis, ex nec cursus lacinia, dui ligula pretium nibh, et iaculis neque dolor quis augue. Morbi tempor, lacus sed egestas suscipit, lectus ante feugiat ligula, ut tincidunt urna velit vitae enim.Etiam fermentum velit quam, id vehicula sem ornare a. Curabitur aliquet, justo quis euismod convallis, lacus velit ultricies tortor, non condimentum mauris lorem eget velit. Vivamus eu enim placerat ante sodales pharetra.
-  </div>
-</div>
+
+  
+
